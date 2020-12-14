@@ -1,0 +1,14 @@
+<div class="head">
+    <h1>HN Feed</h1>
+    <h6>We love hacker news!</h6>
+</div>
+<div class="body">
+    <div *ngFor="let new of news">
+        <div class="label-title">
+            <label for="">{{ new.title }} </label>
+        </div>
+        <div class="label-time">
+            {{ new.time }}
+        </div>
+    </div>
+</div>
