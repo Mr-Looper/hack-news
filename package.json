@@ -1,0 +1,7 @@
+{
+  "name": "hacker-news",
+  "version": "0.0.0",
+  "scripts": {
+    "start:hn": "docker-compose up --build"
+  }
+}

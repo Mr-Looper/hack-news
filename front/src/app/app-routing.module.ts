@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { PageNotFound } from './components/page-not-found/page-not-found.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { NewsComponent } from './components/news/news.component';
 
 
 const routes: Routes = [
-    { path: 'news', component: NewsComponent },
-  { path: '404', component: PageNotFound },
-  { path: '**', pathMatch: 'full', component: PageNotFound }
+  { path: '', component: NewsComponent },
+  { path: 'news', component: NewsComponent },
+  { path: '404', component: PageNotFoundComponent },
+  { path: '**', pathMatch: 'full', component: PageNotFoundComponent }
 ];
 
 @NgModule({

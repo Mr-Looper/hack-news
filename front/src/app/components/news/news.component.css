@@ -1,0 +1,69 @@
+.head-news{
+  padding: 2rem 1.5rem;
+  background: #333;
+  color: white;
+
+}
+.container-new{
+  margin: 0 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid #ccc;
+  cursor: pointer;
+  display: block;
+  float: left;
+  width: -webkit-fill-available;
+  transition: all .5s ease;
+  background: #fff;
+  font-size: 13px;
+}
+.container-new:hover{
+  background: #fafafa !important;
+}
+.label-author{
+  color: #999;
+}
+.label-author:before{
+  content: '- '
+}
+.label-author:after{
+  content: ' -'
+}
+.container-actions, .label-time, .label-title{
+  float: left;
+}
+.container-new .container-actions .delete-icon{
+  opacity: 0;
+  transition: all .2s ease;
+}
+.container-new:hover .container-actions .delete-icon{
+  opacity: 1 !important;
+}
+.label-title{
+  width: calc(75% - 2rem);
+  padding: 0 1rem;
+  color: #333;
+}
+.label-time{
+  width: 20%;
+  color: #333;
+}
+.container-actions{
+  width: 5%;
+}
+/* @media (max-width: 650px){
+  .label-title{
+    width: -webkit-fill-available;
+    padding: 0 1rem;
+  }
+  .label-time{
+    width: 50%;
+    padding: 0 1rem;
+  }
+  .container-actions{
+    width: 50%;
+  }
+}
+@media (min-width: 651px) and (max-width: 960px){
+}
+@media (min-width: 961px) {
+} */

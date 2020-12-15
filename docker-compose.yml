@@ -1,0 +1,34 @@
+version: '3.7'
+
+services:
+  front:
+    container_name: front-hn  # Container name
+    build: ./front # Location of our Dockerfile
+    volumes: # Volume binding
+      - './front:/usr/src/front'
+    ports: 
+      - '4200:4200' # Port mapping
+    depends_on:
+      - back # web will only start if db is up and running
+  mongodb:
+    container_name: mongodb  # Container name
+    image: mongo:latest
+    environment:
+      - MONGODB_DATABASE="nest"
+    volumes: # define location where static files will live
+    - mongodata:/data/db
+    ports:
+      - 27017:27017
+  back: # service name
+    container_name: back-hn  # Container name
+    build: ./back # location of the dockerfile to build the image for this service
+    ports: # host:container- Bind the container port(80) to the host port(1339) Any traffic from the host via port 1339 will go to the docker container via port 80 
+      - 3000:3000
+    volumes: # define location where static files will live
+    - './back:/usr/src/back' 
+    depends_on:
+      - mongodb # web should be up and running for nginx to start
+    restart: "on-failure" # restart nginx container if it fails
+    
+volumes:
+  mongodata: 

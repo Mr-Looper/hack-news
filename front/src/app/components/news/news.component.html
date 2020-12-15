@@ -1,14 +1,17 @@
-<div class="head">
+<div class="head-news">
     <h1>HN Feed</h1>
-    <h6>We love hacker news!</h6>
+    <h4>We love hacker news!</h4>
 </div>
 <div class="body">
-    <div *ngFor="let new of news">
-        <div class="label-title">
-            <label for="">{{ new.title }} </label>
+    <div *ngFor="let new of news" class="container-new">
+        <div class="label-title" (click)="openUrl(new.url)">
+            <label for="">{{ new.title }} </label><span class="label-author">{{ new.author }}</span>
         </div>
-        <div class="label-time">
-            {{ new.time }}
+        <div class="label-time" (click)="openUrl(new.url)">
+            {{ new.date }}
+        </div>
+        <div class="container-actions">
+            <i class="delete-icon" (click)="deleteNew(new._id)"></i>
         </div>
     </div>
 </div>
